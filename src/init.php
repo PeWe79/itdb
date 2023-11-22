@@ -33,7 +33,6 @@ if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
 else 
   $remaddr=$_SERVER['REMOTE_ADDR'];
 
-
 require_once('conf.php');
 require_once('functions.php');
 require_once('model.php');
@@ -92,7 +91,6 @@ if (!$demomode) {
   }
   */
 
-
   if (!is_writable($uploaddir)) {
     echo "$scriptdir is not writeable by apache<br>";
     echo "<b><big>make $uploaddir writeable by the user running the web server</big></b><br>";
@@ -106,8 +104,6 @@ if (!$demomode) {
     echo "in unix: <br><pre>chown -R $procusername $scriptdir/translations; chmod u+w $scriptdir/translations</pre>";
     exit;
   }
-
-
 
 }
 
@@ -130,7 +126,6 @@ $ret = $dbh->exec("PRAGMA case_sensitive_like = 0;");
 $ret = $dbh->exec("PRAGMA encoding = \"UTF-8\";");
 //$ret = $dbh->exec("PRAGMA foreign_keys = ON");
 
-
 $uploadErrors = array(
     UPLOAD_ERR_OK => 'There is no error, the file uploaded with success.',
     UPLOAD_ERR_INI_SIZE => 'The uploaded file exceeds the upload_max_filesize directive in php.ini.',
@@ -148,7 +143,6 @@ $sth=db_execute($dbh,$sql,1);
 $settings=$sth->fetchAll(PDO::FETCH_ASSOC);
 
 $settings=$settings[0];
-
 
 if($settings['dateformat']=="ymd") {
   $datetitle="y-m-d or yyyy";
@@ -172,7 +166,7 @@ else {
 date_default_timezone_set($settings['timezone']);
 
 read_trans($settings['lang']);
-if (get_magic_quotes_gpc()) {
+if (!function_exists('get_magic_quotes_gpc') || get_magic_quotes_gpc()) {
     function stripslashes_deep($value)
     {
         $value = is_array($value) ?
@@ -190,8 +184,7 @@ if (get_magic_quotes_gpc()) {
     $_REQUEST = array_map('stripslashes_deep', $_REQUEST);
 }
 
-
-///////////cookies///////////
+// cookies
 $authstatus=0;
 $authmsg="Not logged in";
 if (!$demomode ) {
