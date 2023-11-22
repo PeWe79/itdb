@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript"> 
+<script language="JavaScript"> 
 
 $(document).ready(function() {
 
@@ -17,7 +17,7 @@ $(document).ready(function() {
 });
 
 
-</SCRIPT>
+</script>
 <?php 
 
 

@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript"> 
+<script language="JavaScript"> 
 $(function () {
  //$('input#softlistfilter').quicksearch('table#softlisttbl tbody tr');
 
@@ -20,7 +20,7 @@ $(function () {
 
 });
 
-</SCRIPT>
+</script>
 <?php 
 if (!isset($initok)) {echo "do not run this script directly";exit;}
 
