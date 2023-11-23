@@ -77,6 +77,10 @@
 					<td class="tdt"><?php te("Currency")?></td>
 					<td>
 						<select name='currency'>
+							<?php if ($settings['currency']=="&#82;&#112;") $s="SELECTED"; else $s="" ?>
+      						
+							<option <?php echo $s?> title='IDR' value='<?php echo htmlentities("&#82;&#112;");?>'>&#82;&#112;</option>
+							
 							<?php if ($settings['currency']=="&euro;") $s="SELECTED"; else $s="" ?>
 							
 							<option <?php echo $s?> title='Euro' value='<?php echo htmlentities("&euro;");?>'>&euro;</option>
