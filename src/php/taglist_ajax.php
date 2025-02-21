@@ -3,15 +3,13 @@
 
 require("../init.php");
 
-$srch=$_GET['term']; //contains user typed term part
-$srch=trim($srch);
+$srch = $_GET['term']; //contains user typed term part
+$srch = trim($srch);
 
-$tags=array();
-$sql="SELECT * from tags where name like '%$srch%' order by name";
+$tags = array();
+$sql = "SELECT * from tags where name like '%$srch%' order by name";
 $sth = $dbh->query($sql);
 
-while ($r=$sth->fetch(PDO::FETCH_ASSOC)) array_push($tags,$r['name']);
+while ($r = $sth->fetch(PDO::FETCH_ASSOC)) array_push($tags, $r['name']);
 
 echo json_encode($tags);
-
-?>

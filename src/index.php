@@ -275,7 +275,6 @@ if ($dlg && $authstatus) {
           <td><a title='<?php te("Add new Invoice"); ?>' class='ahdr' href="<?php echo $scriptname ?>?action=editinvoice&amp;id=new"><img alt="+" src='images/add.png'></a></td>
         </tr>
 
-
         <tr>
           <td><a style="<?php echo $style_listagents . $style_editagent; ?>" title='<?php te("Vendors/Buyers/ Manufacturers"); ?>' class='ahdr' href="<?php echo $scriptname ?>?action=listagents"><?php te("Agents"); ?></a> </td>
           <td><a title='<?php te("Add new Agent"); ?>' class='ahdr' href="<?php echo $scriptname ?>?action=editagent&amp;id=new"><img alt="+" src='images/add.png'></a></td>
@@ -285,7 +284,6 @@ if ($dlg && $authstatus) {
           <td><a style="<?php echo $style_listfiles . $style_editfile; ?>" title='<?php te("Documents, Manuals, Offers, Licenses, ..."); ?>' class='ahdr' href="<?php echo $scriptname ?>?action=listfiles"><?php te("Files"); ?></a> </td>
           <td><a title='<?php te("Add new File"); ?>' class='ahdr' href="<?php echo $scriptname ?>?action=editfile&amp;id=new"><img alt="+" src='images/add.png'></a></td>
         </tr>
-
 
         <tr>
           <td><a style="<?php echo $style_listcontracts . $style_editcontract; ?>" title='<?php te("Support and Maintanance, Leases, ..."); ?>' class='ahdr' href="<?php echo $scriptname ?>?action=listcontracts"><?php te("Contracts"); ?></a> </td>
@@ -301,7 +299,6 @@ if ($dlg && $authstatus) {
           <td><a style="<?php echo $style_listusers; ?>" class='ahdr' href="<?php echo $scriptname ?>?action=listusers"><?php te("Users"); ?></a></td>
           <td><a style="<?php echo $style_edituser; ?>" class='ahdr' href="<?php echo $scriptname ?>?action=edituser&amp;id=new"><img alt="+" src='images/add.png'></a></td>
         </tr>
-
 
         <tr>
           <td><a style="<?php echo $style_listracks; ?>" class='ahdr' href="<?php echo $scriptname ?>?action=listracks"><?php te("Racks"); ?></a></td>
@@ -386,7 +383,6 @@ if ($dlg && $authstatus) {
         "<form method=post><button type='submit'><img width=20 src='images/logout_red.png'> " . t("Logout") . "</button>" .
         "\n<input type=hidden name=logout value='1'></form>";
 
-
       if (strlen($stitle)) {
         $url = "$fscriptname?action=$action&id=$id";
 
@@ -446,7 +442,6 @@ if ($dlg && $authstatus) {
     <a title='phpinfo' href='phpinfo.php'><img src='images/infosmall.png'></a>
   </div>
   <!-- END OF #leftcolumn -->
-
 
   <div id='mainpage'>
     <?php
