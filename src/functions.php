@@ -1,9 +1,9 @@
-<?php 
+<?php
 function sec2ymd($secs)
 {
   if (strlen($secs))
     return date("Ymd",$secs);
-  else 
+  else
     return "";
 }
 
@@ -54,7 +54,7 @@ function validfn($s) {
   $t =preg_split('//u', 'ABGDEZHUIKLMNJOPRSSTYFXCVIUOUVAEUabgdezhuiklmnjoprsstyfxcviiiuouvaeu');
   $s=str_replace($f,$t,$s);
   $reserved = preg_quote('\/:*?"<>|', '/');
-  $s=preg_replace("/([-\\x00-\\x20\\x7f-\\xff{$reserved}])/e", "", $s); 
+  $s=preg_replace("/([-\\x00-\\x20\\x7f-\\xff{$reserved}])/e", "", $s);
   $s=strtolower($s);
   return $s;
 }
@@ -68,7 +68,7 @@ function strenc($s)
 }
 //////////////////// Database functions /////
 // check permissions, log errors and transactions
-// 
+//
 //encode string for sql/html
 
 //for insert, update, delete
@@ -88,7 +88,7 @@ global $authstatus,$userdata, $remaddr, $dblogsize,$errorstr,$errorbt;
   $usertype=($ut['usertype']);
   $sth->closeCursor();
 
-  if (!$skipauth && $usertype && (stristr($sql,"DELETE") || stristr($sql,"UPDATE") || stristr($sql,"INSERT")) 
+  if (!$skipauth && $usertype && (stristr($sql,"DELETE") || stristr($sql,"UPDATE") || stristr($sql,"INSERT"))
       && !stristr($sql," tt ")) { /*tt:temporary table used for complex queries*/
     echo "<big><b>Access Denied, user '$usr' is read-only</b></big><br>";
     return 0;
@@ -158,7 +158,7 @@ function opendb($dbfile) {
     //open db
     try {
       $dbh = new PDO("sqlite:$dbfile");
-    } 
+    }
     catch (PDOException $e) {
       print "Open database Error!: " . $e->getMessage() . "<br>";
       die();
@@ -183,6 +183,9 @@ function ckdberr($resource) {
     return 0;
 }
 
+function logerr($message) {
+    error_log($message);
+}
 
 /*execute with prepared statements
 Example:

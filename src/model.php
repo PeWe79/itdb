@@ -131,6 +131,7 @@ function contractid2files($contractid,$dbh) {
 
 //returns number of connected items/racks with a locationid
 function countloclinks($locid,$dbh) {
+  $count = 0;
   $sql="SELECT count(id) count from items where locationid=$locid";
   $sth=db_execute($dbh,$sql);
   $r=$sth->fetch(PDO::FETCH_ASSOC);
@@ -148,6 +149,7 @@ function countloclinks($locid,$dbh) {
 
 //returns number of connected items/racks with a location areaid
 function countlocarealinks($locareaid,$dbh) {
+  $count = 0;
   $sql="SELECT count(id) count from items where locareaid=$locareaid";
   $sth=db_execute($dbh,$sql);
   $r=$sth->fetch(PDO::FETCH_ASSOC);
@@ -358,7 +360,7 @@ global $dateparam,$scriptname,$action,$id,$uploaddirwww,$dbh;
    if (strlen($ftitle)) $t="<br>Title:$ftitle"; else $t="";
 
    $flnk.="<div title='$divtitle' class='$class' >";
-   if ($wantdel) 
+   if ($wantdel)
      $flnk.="<a title='Remove association. If file is orphaned (nothing links to it), it gets deleted.' ".
 	   "href='javascript:delconfirm2(\"[$fid] $fname\",\"$scriptname?action=$action&amp;id=$id&amp;delfid=$fid\");'>".
 	 "<img src='images/delete.png'></a> ";
@@ -397,7 +399,7 @@ function calcremdays($purchdate_ts,$warrantymonths) {
 	$exp_interval_sign=$exp_interval->format('%r');
 	$exp_interval_days="$exp_interval_sign".$exp_interval->days;
 
-	if ($exp_interval_sign=="-") 
+	if ($exp_interval_sign=="-")
 		$exp_interval_str="<span style='color:#F90000'>$exp_interval_str</span>";
 	else
 		$exp_interval_str="<span style='color:green'>$exp_interval_str</span>";
@@ -416,7 +418,7 @@ function showremdays($remdays) {
   if ($remdays<0) $remw="<span style='color:#F90000'>$remw</span>";
   if ($remdays>0) $remw="<span style='color:green'>$remw</span>";
   if (abs($remdays)>360*20) $remw="";
-  
+
   return $remw;
 }
 
@@ -425,7 +427,7 @@ function t($s) {
   $lang=$settings['lang'];
 
   if ($lang=="en") return $s;
- 
+
   if (isset($trans_tbl[$lang][$s]) && strlen(trim($trans_tbl[$lang][$s]))) {
     return $trans_tbl[$lang][$s];
   }
@@ -488,9 +490,9 @@ function gethwmanufacturerbyname ($name) {
 	$r=$sth->fetchAll(PDO::FETCH_ASSOC);
 	$sth->closeCursor();
 
-	if (!count($r[0]['id'])) 
+	if (!count($r[0]['id']))
 		return -1;
-	else 
+	else
 		return $r;
 }
 
@@ -506,9 +508,9 @@ function getuseridbyname ($name) {
 	$r=$sth->fetch(PDO::FETCH_ASSOC);
 	$sth->closeCursor();
 
-	if (!count($r['id'])) 
+	if (!count($r['id']))
 		return -1;
-	else 
+	else
 		return $r['id'];
 }
 
@@ -523,9 +525,9 @@ function getagentidbyname ($name) {
 	$r=$sth->fetch(PDO::FETCH_ASSOC);
 	$sth->closeCursor();
 
-	if (!count($r['id'])) 
+	if (!count($r['id']))
 		return -1;
-	else 
+	else
         return $r['id'];
 }
 
@@ -540,9 +542,9 @@ function getitemtypeidbyname ($name) {
 	$r=$sth->fetch(PDO::FETCH_ASSOC);
 	$sth->closeCursor();
 
-	if (!count($r['id'])) 
+	if (!count($r['id']))
 		return -1;
-	else 
+	else
 		return $r['id'];
 }
 
@@ -559,9 +561,9 @@ function getstatustypeidbyname ($name) {
 	$r=$sth->fetch(PDO::FETCH_ASSOC);
 	$sth->closeCursor();
 
-	if (!count($r['id'])) 
+	if (!count($r['id']))
 		return -1;
-	else 
+	else
 		return $r['id'];
 }
 
