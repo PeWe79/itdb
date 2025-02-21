@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
   $(document).ready(function() {
     $("#langsel").change(function() {
       $('#mainform').submit();
@@ -12,7 +12,7 @@
     });
 
   });
-</SCRIPT>
+</script>
 <?php
 
 

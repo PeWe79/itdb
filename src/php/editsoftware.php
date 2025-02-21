@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
   $(document).ready(function() {
     $('input#itemsfilter').quicksearch('table#itemslisttbl tbody tr');
     $('input#invfilter').quicksearch('table#invlisttbl tbody tr');
@@ -8,7 +8,7 @@
     $("#tabs").show();
 
   });
-</SCRIPT>
+</script>
 
 <?php
 if (!isset($initok)) {

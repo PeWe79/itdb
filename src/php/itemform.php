@@ -1,5 +1,5 @@
 <!-- Spiros Ioannou 2009 , sivann _at_ gmail.com -->
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
   $(document).ready(function() {
     $('input#invoicefilter').quicksearch('table#invoicelisttbl tbody tr');
     $('input#itemsfilter').quicksearch('table#itemslisttbl tbody tr');
@@ -34,20 +34,15 @@
           $("#rackid").html(html);
         }
       });
-
-
-
     });
-
   });
-</SCRIPT>
+</script>
 <?php
 
 if (!isset($initok)) {
   echo "do not run this script directly";
   exit;
 }
-
 
 if ($id != "new") {
   //get current item data
@@ -56,7 +51,6 @@ if ($id != "new") {
   $sth = db_execute($dbh, $sql);
   $item = $sth->fetchAll(PDO::FETCH_ASSOC);
 }
-
 
 $sql = "SELECT * FROM itemtypes order by typedesc";
 $sth = $dbh->query($sql);
@@ -74,9 +68,7 @@ $sql = "SELECT * FROM locations order by name";
 $sth = $dbh->query($sql);
 $locations = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-
-
-//$sql="SELECT * FROM racks"; $sth=$dbh->query($sql); $racks=$sth->fetchAll(PDO::FETCH_ASSOC);
+// $sql="SELECT * FROM racks"; $sth=$dbh->query($sql); $racks=$sth->fetchAll(PDO::FETCH_ASSOC);
 
 $sql = "SELECT id,title,type FROM agents order by title";
 $sth = db_execute($dbh, $sql);
@@ -86,14 +78,11 @@ $sql = "SELECT * FROM statustypes";
 $sth = $dbh->query($sql);
 $statustypes = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-
-
 $sql = "SELECT items.* from items,itemtypes where " .
   " (itemtypes.typedesc like '%switch%' or itemtypes.typedesc like '%router%' ) " .
   " and itemtypes.id=items.itemtypeid ";
 $sth = $dbh->query($sql);
 $netitems = $sth->fetchAll(PDO::FETCH_ASSOC);
-
 
 //change displayed form items in input fields
 if ($id == "new") {
@@ -145,9 +134,7 @@ else if ($action == "edititem") {
   </ul>
 
   <div id="tab1" class="tab_content">
-
     <form class='frm1' enctype='multipart/form-data' method=post name='additmfrm' id='mainform'>
-
       <table border='0' class=tbl1>
         <tr>
           <td class='tdtop'>

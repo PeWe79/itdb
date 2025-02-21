@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
   $(document).ready(function() {
 
     $("#tabs").tabs();
@@ -10,7 +10,7 @@
     });
 
   });
-</SCRIPT>
+</script>
 <?php
 
 if (!isset($initok)) {

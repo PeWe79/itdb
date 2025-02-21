@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
   $(function() {
     $('table#userslisttbl').dataTable({
       "sPaginationType": "full_numbers",
@@ -12,11 +12,11 @@
       "aaSorting": [],
       "oTableTools": {
         "sSwfPath": "swf/copy_cvs_xls_pdf.swf"
-      }
+      },
 
     });
   });
-</SCRIPT>
+</script>
 <?php
 
 if (!isset($initok)) {

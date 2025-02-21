@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
   function confirm_filled($row) {
     var filled = 0;
     $row.find('input,select').each(function() {
@@ -34,7 +34,7 @@
 
 
   });
-</SCRIPT>
+</script>
 <?php
 if (!isset($initok)) {
   echo "do not run this script directly";

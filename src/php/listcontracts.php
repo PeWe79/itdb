@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
   $(function() {
     //$('input#contlistfilter').quicksearch('table#contlisttbl tbody tr');
     $('table#contlisttbl').dataTable({
@@ -53,7 +53,7 @@
     };
 
   });
-</SCRIPT>
+</script>
 <?php
 
 if (!isset($initok)) {

@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
   $(document).ready(function() {
 
     $(document).ready(function() {
@@ -9,8 +9,6 @@
     $('input#itemsfilter').quicksearch('table#itemslisttbl tbody tr');
     $('input#softfilter').quicksearch('table#softlisttbl tbody tr');
     $('input#contrfilter').quicksearch('table#contrlisttbl tbody tr');
-
-
   });
 </script>
 

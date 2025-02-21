@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
   $(function() {
     //$('input#locationslistfilter').quicksearch('table#locationslisttbl tbody tr');
     $('table#locationslisttbl').dataTable({
@@ -21,7 +21,7 @@
 
     });
   });
-</SCRIPT>
+</script>
 <?php
 
 if (!isset($initok)) {

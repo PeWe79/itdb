@@ -1,10 +1,4 @@
 <?php
-//ITDB:IT-items database
-//sivann at gmail.com 2008-2009
-//init.php: init db + some variables
-
-//$scriptdir=dirname($_SERVER['SCRIPT_FILENAME']);
-//$scriptdir=getcwd();  //some may have problem with this
 
 $scriptdir = dirname(__FILE__);
 
@@ -91,7 +85,6 @@ if (!$demomode) {
     exit;
   }
   */
-
 
   if (!is_writable($uploaddir)) {
     echo "$scriptdir is not writeable by apache<br>";

@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
   $(function() {
     $('table#rackslisttbl').dataTable({
       "sPaginationType": "full_numbers",
@@ -16,7 +16,7 @@
 
     });
   });
-</SCRIPT>
+</script>
 <?php
 
 if (!isset($initok)) {

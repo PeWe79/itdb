@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
   $(function() {
     //$('input#agentlistfilter').quicksearch('table#agentlisttbl tbody tr');
 
@@ -17,11 +17,10 @@
       "sDom": '<"H"Tlpf>rt<"F"ip>',
       "oTableTools": {
         "sSwfPath": "swf/copy_cvs_xls_pdf.swf"
-      }
-
+      },
     });
   });
-</SCRIPT>
+</script>
 <?php
 
 if (!isset($initok)) {
@@ -39,7 +38,6 @@ $sth = db_execute($dbh, $sql);
 </h1>
 
 <table class='display' width='100%' border=0 id='agentlisttbl'>
-
   <thead>
     <tr>
       <th style='width:70px'><?php te("Edit ID"); ?></th>

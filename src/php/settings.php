@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
   $(document).ready(function() {
 
     <?php
@@ -8,7 +8,7 @@
     ?>
 
   });
-</SCRIPT>
+</script>
 <?php
 
 if (!isset($initok)) {

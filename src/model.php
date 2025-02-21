@@ -2,7 +2,6 @@
 
 /********************************* DB QUERIES IN FUNCTION FORM ****************************************/
 
-
 function getstatusidofitem($itemid, $dbh)
 {
   $sql = "SELECT status FROM items WHERE items.id='$itemid'";
@@ -26,7 +25,6 @@ function attrofstatus($statusid, $dbh)
 
   return array($attr, $statustxt);
 }
-
 
 function ftype2str($typeid, $dbh)
 {
@@ -85,9 +83,6 @@ function softid2contractfiles($softid, $dbh)
   return $f;
 }
 
-
-
-
 //returns files array from item id
 function itemid2files($itemid, $dbh)
 {
@@ -121,8 +116,6 @@ function itemid2contractfiles($itemid, $dbh)
   return $f;
 }
 
-
-
 //returns files array from contract id
 function contractid2files($contractid, $dbh)
 {
@@ -133,8 +126,6 @@ function contractid2files($contractid, $dbh)
   $fn = $sth->fetchAll(PDO::FETCH_ASSOC);
   return $fn;
 }
-
-
 
 //returns number of connected items/racks with a locationid
 function countloclinks($locid, $dbh)
@@ -155,7 +146,7 @@ function countloclinks($locid, $dbh)
   return $count;
 }
 
-//returns number of connected items/racks with a location areaid
+// returns number of connected items/racks with a location areaid
 function countlocarealinks($locareaid, $dbh)
 {
   $count = 0;

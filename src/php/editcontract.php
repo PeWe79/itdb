@@ -1,4 +1,4 @@
-<SCRIPT LANGUAGE="JavaScript">
+<script language="javascript">
   function confirm_filled($row) {
     var filled = 0;
     $row.find('input,select').each(function() {
@@ -93,18 +93,12 @@
         $('#ev_deldialog').dialog('close');
       }
     });
-
-
-
-
-
   });
-
 
   function showid(n) {
     document.getElementById(n).scrollIntoView(false);
   }
-</SCRIPT>
+</script>
 <?php
 if (!isset($initok)) {
   echo "do not run this script directly";
@@ -123,14 +117,10 @@ $sql = "SELECT id,title,type FROM agents";
 $sth = db_execute($dbh, $sql);
 while ($r = $sth->fetch(PDO::FETCH_ASSOC)) $agents[$r['id']] = $r;
 
-
-
 /* Spiros Ioannou 2009-2010 , sivann _at_ gmail.com */
-
 //delete agent
 if (isset($_GET['delid'])) { //if we came from a post (save) the update agent
   $delid = $_GET['delid'];
-
 
   $sql = "DELETE FROM contract2item WHERE contractid=$delid";
   db_exec($dbh, $sql);
