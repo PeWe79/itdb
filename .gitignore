@@ -1,3 +1,3 @@
 *.swp
 #data/files/*
-data/itdb.db
+src/data/itdb.db
